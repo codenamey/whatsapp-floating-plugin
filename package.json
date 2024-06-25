@@ -4,11 +4,8 @@
   "description": "A plugin to integrate WhatsApp floating chat using react-floating-whatsapp.",
   "main": "whatsapp-floating-plugin.php",
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack --mode development --watch",
-    "clean": "rm -rf dist",
-    "postbuild": "npm run clean && mkdir -p dist && cp -r css dist/ && cp -r templates dist/ && cp whatsapp-floating-plugin.php dist/ && cp -r js dist/",
-    "zip": "npm run build && npm run postbuild && cd dist && zip -r ../whatsapp-floating-plugin.zip . && cd .. && npm run clean"
+    "build": "webpack --mode production && node build.js",
+    "start": "webpack --mode development --watch"
   },
   "author": "Lennart Takanen",
   "license": "ISC",
@@ -18,6 +15,7 @@
     "@wordpress/components": "^28.0.3",
     "@wordpress/element": "^6.1.0",
     "@wordpress/i18n": "^5.1.0",
+    "archiver": "^7.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-floating-whatsapp": "^5.0.8"
