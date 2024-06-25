@@ -1,19 +1,20 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { FloatingWhatsApp } from 'react-floating-whatsapp';
+import {FloatingWhatsApp} from 'react-floating-whatsapp';
 
-const App = () => {
-    const settings = window.whatsappFloatingSettings;
-    return (
-        <FloatingWhatsApp
-            phoneNumber={settings.phoneNumber}
-            accountName={settings.accountName}
-            avatar={settings.avatar} // Vaihda tarvittaessa avatar-polku
-        />
-    );
+const WhatsAppChat = () => {
+  return (
+    <FloatingWhatsApp
+      phoneNumber={whatsappFloatingSettings.phoneNumber}
+      accountName={whatsappFloatingSettings.accountName}
+      avatar={whatsappFloatingSettings.avatar}
+      chatMessage={whatsappFloatingSettings.chatMessage}
+      statusMessage={whatsappFloatingSettings.statusMessage}
+    />
+  );
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    const root = createRoot(document.getElementById('whatsapp-floating-root'));
-    root.render(<App />);
+  const root = createRoot(document.getElementById('whatsapp-floating-root'));
+  root.render(<WhatsAppChat />);
 });
