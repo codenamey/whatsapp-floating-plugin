@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import {FloatingWhatsApp} from 'react-floating-whatsapp';
+import { FloatingWhatsApp } from 'react-floating-whatsapp';
 
 const WhatsAppChat = () => {
   return (
