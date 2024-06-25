@@ -35,5 +35,7 @@ archive.on('error', err => {
 });
 
 archive.pipe(output);
-archive.directory(buildDir, false);
+
+// Add the entire buildDir to the zip under whatsapp-floating-plugin folder
+archive.directory(buildDir, 'whatsapp-floating-plugin');
 archive.finalize();
