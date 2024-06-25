@@ -5,7 +5,10 @@
   "main": "whatsapp-floating-plugin.php",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack --mode development --watch"
+    "start": "webpack --mode development --watch",
+    "clean": "rm -rf dist",
+    "postbuild": "npm run clean && mkdir -p dist && cp -r css dist/ && cp -r templates dist/ && cp whatsapp-floating-plugin.php dist/ && cp -r js dist/",
+    "zip": "npm run build && npm run postbuild && cd dist && zip -r ../whatsapp-floating-plugin.zip . && cd .. && npm run clean"
   },
   "author": "Lennart Takanen",
   "license": "ISC",
